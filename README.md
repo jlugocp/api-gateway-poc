@@ -121,6 +121,24 @@ Run the same command multiple times in a row, alteast twice per second. The firs
 
 
 
+**Eureka Discovery Service**
+
+The Proof of Concept does not use a discovery service. However, to do so would be fairly simple. Refer to the Eureka tutorial at the bottom of this document.
+
+![discovery service diagram](/Users/jorlugo/Documents/sandbox/api_gateway_1/api-gateway-poc/spring cloud gateway w eureka.drawio.png)
+
+Each service, containing a unique host and port, needs a mapping in the gateway. The mapping between the gateway and the micro-service seems to be the application name.
+
+**Challenges**
+
+I encountered a few challenges that remain.
+
+I was unable to route a request to a local service on a different port. I get a `404, Not Found` response.
+
+I was also unable to connect to a non-local service using https. I get a `404, Page not found` response.
+
+
+
 **Tutorials**
 
 Circuit Breaker Tutorial
@@ -130,6 +148,14 @@ https://spring.io/guides/gs/gateway/#scratch
 Rate Limiter Tutorial
 
 https://www.baeldung.com/spring-cloud-gateway-rate-limit-by-client-ip
+
+Spring Cloud Gateway + Netflix Eureka Example
+
+https://www.javainuse.com/spring/cloud-gateway-eureka
+
+Another Eureka example. This one has slightly different configuration which may be helpful.
+
+https://www.geeksforgeeks.org/java-spring-boot-microservices-integration-of-eureka-and-spring-cloud-gateway/
 
 
 
@@ -142,3 +168,4 @@ https://spring.io/projects/spring-cloud-circuitbreaker
 Spring with Redis
 
 https://www.baeldung.com/spring-data-redis-properties
+
